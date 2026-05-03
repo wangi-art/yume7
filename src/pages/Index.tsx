@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import heroImg from "@/assets/ramen-hero.jpg";
-import interiorImg from "@/assets/ramen-interior.jpg";
-import noodlesImg from "@/assets/ramen-noodles.jpg";
-import dessertImg from "@/assets/dessert.jpg";
+import heroImg from "@/assets/ramen-hero.webp";
+import interiorImg from "@/assets/ramen-interior.webp";
+import interior2Img from "@/assets/ramen-interior-2.webp";
+import spreadImg from "@/assets/ramen-spread.webp";
+import bentoImg from "@/assets/ramen-bento.webp";
+import dessertImg from "@/assets/dessert.webp";
 import { MapPin, Clock, Star, Phone, ChevronRight } from "lucide-react";
 
 const Nav = () => {
@@ -211,10 +213,10 @@ const Menu = () => (
 
       <div className="mt-20 grid md:grid-cols-2 gap-6">
         <div className="relative aspect-[4/3] overflow-hidden grain">
-          <img src={noodlesImg} alt="Hand-pulled noodles lifted from miso broth" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
+          <img src={spreadImg} alt="A full ramen and side-dish spread at Yume 7" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
         </div>
         <div className="relative aspect-[4/3] overflow-hidden grain">
-          <img src={dessertImg} alt="Matcha and taro desserts" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
+          <img src={bentoImg} alt="Tempura, spring rolls and boiled peanuts bento appetiser" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
         </div>
       </div>
     </div>
