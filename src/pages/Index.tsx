@@ -211,12 +211,15 @@ const Menu = () => (
         ))}
       </div>
 
-      <div className="mt-20 grid md:grid-cols-2 gap-6">
+      <div className="mt-20 grid md:grid-cols-3 gap-6">
         <div className="relative aspect-[4/3] overflow-hidden grain">
           <img src={spreadImg} alt="A full ramen and side-dish spread at Yume 7" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
         </div>
         <div className="relative aspect-[4/3] overflow-hidden grain">
           <img src={bentoImg} alt="Tempura, spring rolls and boiled peanuts bento appetiser" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden grain">
+          <img src={dessertImg} alt="Signature shaved-ice dessert with chocolate, red bean and ice cream" loading="lazy" width={1024} height={1280} className="w-full h-full object-cover hover:scale-105 transition duration-700" />
         </div>
       </div>
     </div>
