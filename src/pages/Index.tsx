@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import heroImg from "@/assets/ramen-hero.webp";
-import interiorImg from "@/assets/ramen-interior.webp";
 import interior2Img from "@/assets/ramen-interior-2.webp";
 import spreadImg from "@/assets/ramen-spread.webp";
 import bentoImg from "@/assets/ramen-bento.webp";
