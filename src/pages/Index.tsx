@@ -117,7 +117,7 @@ const Story = () => (
       <div className="lg:col-span-5 relative">
         <div className="relative aspect-[4/5] overflow-hidden">
           <img
-            src={interiorImg}
+            src={interior2Img}
             alt="Yume 7 dining room with paper lanterns"
             loading="lazy"
             width={1536}
