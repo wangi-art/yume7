@@ -92,3 +92,7 @@
   .animate-steam { animation: steam 5s ease-in-out infinite; }
   .animate-slow-zoom { animation: slow-zoom 18s ease-out forwards; }
 }
+::selection {
+  background: #dd442c;  /* highlight color */
+  color: white;         /* text color while selected */
+}

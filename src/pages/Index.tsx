@@ -30,7 +30,7 @@ const t = {
       stat1: "Google rating",
       stat2: "Reviews",
       stat3: "Mon–Sat · 12:00 – 22:00",
-      space: "Of quiet space",
+      space: "Of space",
     },
     menu: {
       kicker: "— The Menu",
@@ -42,9 +42,10 @@ const t = {
         rice: "Rice Dishes",
         fried: "Fried Dishes",
         cold: "Cold Dishes",
-        snow: "Snow Ice Dessert",
-        tea: "Milk Tea & Juice",
-        cold_drinks: "Cold Beverages",
+        snow: "Snowice",
+        tea: "Milk Tea",
+        juice: "Homemeade Fruit Juices",
+        cold_drinks: "Cold Beverage",
         hot_tea: "Hot Tea",
         beer: "Beer",
       },
@@ -80,9 +81,9 @@ const t = {
     nav: { story: "Rólunk", menu: "Étlap", reviews: "Vélemények", visit: "Látogass el", reserve: "Foglalás" },
     hero: {
       kicker: "Budapest · Káldy Gyula u. 5",
-      title1: "Egy tál,",
-      titleEm: "amiért",
-      title2: "érdemes eljönni.",
+      title1: "Egy tál, amiért",
+      titleEm: "érdemes",
+      title2: "eljönni.",
       sub: "Lassan főzött alaplevek, kézzel nyújtott tészták, és Japán csendes rituáléja — Budapest szívében.",
       cta1: "Étlap megtekintése",
       cta2: "Tervezd meg a látogatást",
@@ -105,12 +106,13 @@ const t = {
       titleEm: "Minden részlet számít.",
       jp: "本日のお品書き",
       sections: {
-        ramen: "Rámen",
-        rice: "Rizses Ételek",
-        fried: "Sült Ételek",
-        cold: "Hideg Ételek",
+        ramen: "Ramen",
+        rice: "Rice Dishes",
+        fried: "Fried Dishes",
+        cold: "Cold Dishes",
         snow: "Hópehely Jégdesszert",
-        tea: "Tejes Tea & Gyümölcslé",
+        tea: "Tejes Tea",
+        juice: "Házi Gyümölcs Tea",
         cold_drinks: "Hideg Italok",
         hot_tea: "Forró Tea",
         beer: "Sörök",
@@ -250,7 +252,7 @@ const Hero = ({ lang }: { lang: Lang }) => {
         {L.sub}
       </p>
       <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.45s" }}>
-        <a href="#menu" className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-sm tracking-[0.25em] uppercase hover:bg-primary/90 transition">
+        <a href="#menu" className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-sm tracking-[0.25em] uppercase hover:bg-primary-foreground hover:text-primary transition">
           {L.cta1} <ChevronRight className="w-4 h-4" />
         </a>
         <a href="#visit" className="inline-flex items-center gap-3 px-7 py-4 text-sm tracking-[0.25em] uppercase text-foreground border border-foreground/30 hover:border-foreground transition">
@@ -333,7 +335,7 @@ const menuData: MenuSection[] = [
     key: "ramen",
     items: [
       { name: { en: "Tonkotsu Black Garlic", hu: "Tonkotsu Black Garlic" }, jp: "豚骨黒マー油", desc: { en: "Rich Tonkotsu broth with chashu, egg, bamboo, narutomaki, nori, scallions & black garlic oil.", hu: "Gazdag tonkotsu alaplé chashuval, tojással, narutomakival, bambusszal, újhagymával és fekete fokhagymaolajjal." }, price: "4 490" },
-      { name: { en: "Jiro-Style Tonkotsu Garlic Ramen", hu: "Jiro-Style Tonkotsu Garlic Ramen" }, jp: "豚骨ベースの二郎系", desc: { en: "Rich Tonkotsu broth, chashu, egg, cabbage, kakuni, bean sprouts, crispy fried onions, nori, scallions & garlic.", hu: "Gazdag tonkotsu alaplé chashuval, tojással, káposztával, babcsírával, kakunival, ropogós sült hagymával, norival, újhagymával és fokhagymával." }, price: "5 490", tag: { en: "Signature", hu: "Sztár" } },
+      { name: { en: "Jiro-Style Tonkotsu Garlic Ramen", hu: "Jiro-Style Tonkotsu Garlic Ramen" }, jp: "豚骨ベースの二郎系", desc: { en: "Rich Tonkotsu broth, chashu, egg, cabbage, kakuni, bean sprouts, crispy fried onions, nori, scallions & garlic.", hu: "Gazdag tonkotsu alaplé chashuval, tojással, káposztával, babcsírával, kakunival, ropogós sült hagymával, norival, újhagymával és fokhagymával." }, price: "5 490", tag: { en: "Signature", hu: "Specialitás" } },
       { name: { en: "Paitan Chicken Wanton", hu: "Paitan Chicken Wanton" }, jp: "鶏白湯ワンタン", desc: { en: "Paitan broth with chicken wantons, egg, corn, shiitake, cherry tomatoes, nori, scallions & aroma oil.", hu: "Paitan alaplé csirke wontonnal, tojással, kukoricával, shiitakével, koktélparadicsommal, norival, újhagymával és aromás olajjal." }, price: "4 990" },
       { name: { en: "Buttercorn Creamy Miso", hu: "Buttercorn Creamy Miso" }, jp: "バターコーン味噌", desc: { en: "Rich Tonkotsu miso broth with pork mince, egg, edamame, corn, scallions, nori & butter.", hu: "Gazdag tonkotsu miso alaplé darált sertéshússal, tojással, edamaméval, kukoricával, újhagymával, norival és vajjal." }, price: "4 490" },
       { name: { en: "Tonkotsu Sesame Miso", hu: "Tonkotsu Sesame Miso" }, jp: "豚骨胡麻味噌", desc: { en: "Rich sesame Tonkotsu miso broth with chashu, egg, kimchi, bamboo, nori, scallions & rayu (chili oil).", hu: "Gazdag szezámos tonkotsu miso alaplé chashuval, tojással, kimchivel, bambusszal, norival, újhagymával és rayuval (csiliolaj)." }, price: "4 490", tag: { en: "Spicy", hu: "Csípős" } },
@@ -383,7 +385,12 @@ const menuData: MenuSection[] = [
     items: [
       { name: { en: "Classic Boba", hu: "Klasszikus boba" }, price: "1 690" },
       { name: { en: "Taro Boba", hu: "Taro boba" }, price: "1 690" },
-      { name: { en: "Brown Sugar Boba", hu: "Barna cukros boba" }, price: "1 690" },
+      { name: { en: "Brown Sugar", hu: "Barna cukros boba" }, price: "1 690" },
+    ],
+  },
+  {
+    key: "juice",
+    items: [
       { name: { en: "Yume 7 (Salted Sparkling Lime)", hu: "Yume 7 (Sós szénsavas lime)" }, price: "1 490" },
       { name: { en: "Passion Fruit", hu: "Maracuja" }, price: "1 490" },
       { name: { en: "Mango", hu: "Mangó" }, price: "1 490" },
@@ -402,9 +409,9 @@ const menuData: MenuSection[] = [
       { name: { en: "Ginger Ale", hu: "Gyömbér" }, price: "890" },
       { name: { en: "Cappy", hu: "Cappy" }, price: "890" },
       { name: { en: "Milkis 250ml (Yogurt / Melon)", hu: "Milkis 250ml (Joghurt / Dinnye)" }, price: "990" },
-      { name: { en: "Rico Bubble Milk Tea", hu: "Rico buborékos tej tea" }, price: "990" },
+      { name: { en: "Rico Bubble Milk Tea (Original / Thai / Brown Sugar / Honeydew)", hu: "Rico buborékos tej tea" }, price: "990" },
       { name: { en: "Chi Sparkling Water (Peach / Grape / Lychee)", hu: "Chi szénsavas víz (Őszibarack / Szőlő / Licsi)" }, price: "990" },
-      { name: { en: "OKF Sparkling Water", hu: "OKF szénsavas víz" }, price: "990" },
+      { name: { en: "OKF Sparkling Water (Grapefruit / Pineapple / Lime / Strawberry / Aloe / Grapes)", hu: "OKF szénsavas víz" }, price: "990" },
     ],
   },
   {
@@ -471,9 +478,9 @@ const Menu = ({ lang }: { lang: Lang }) => { const L = t[lang].menu; return (
       </div>
 
       <p className="mt-16 text-center text-muted-foreground text-sm max-w-2xl mx-auto italic">
-        "{L.allergy}"
+        {L.allergy}
       </p>
-      <p className="mt-4 text-center text-primary text-xs tracking-[0.3em] uppercase">{L.noService}</p>
+      {/* <p className="mt-4 text-center text-primary text-xs tracking-[0.3em] uppercase">{L.noService}</p> */}
 
       <div className="mt-20 grid md:grid-cols-3 gap-6">
         <div className="relative aspect-[4/3] overflow-hidden grain">
@@ -591,7 +598,7 @@ const Visit = ({ lang }: { lang: Lang }) => { const L = t[lang].visit; const now
             href="https://maps.google.com/?q=Budapest+Káldy+Gyula+u.+5"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 text-xs tracking-[0.25em] uppercase hover:bg-primary/90 transition"
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 text-xs tracking-[0.25em] uppercase hover:bg-primary-foreground hover:text-primary transition"
           >
             <Navigation className="w-4 h-4" /> {L.directions}
           </a>
