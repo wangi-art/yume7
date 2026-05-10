@@ -95,7 +95,7 @@ const t = {
       titleEm: "Egy élet odaadás.",
       p1: "A Yume 7-ben minden tál jóval a felszolgálás előtt kezdődik. A csontok egész éjjel főnek, a tésztát reggelente kézzel nyújtjuk, a tare-t pedig úgy hangoljuk, mint egy verset.",
       p2: "Kis japán konyha vagyunk Budapest szívében — tágas, nyugodt hely, a ramen lassú mesterségének elkötelezve. Egy hely, ahol megállhatsz, ízlelhetsz, álmodhatsz.",
-      stat1: "Google értékelés",
+      stat1: "A Google-ön",
       stat2: "Vélemény",
       stat3: "H–Szo · 12:00 – 22:00",
       space: "Tágas tér",
@@ -317,7 +317,7 @@ const Story = ({ lang }: { lang: Lang }) => { const L = t[lang].story; return (
             [lang === "hu" ? "H–Szo" : "Mon–Sat", "12:00 – 22:00"],
           ] as const).map(([n, l]) => (
             <div key={l}>
-              <div className="font-display text-3xl text-foreground">{n}</div>
+              <div className="font-display text-3xl text-foreground inline-flex items-center gap-2 whitespace-nowrap">{n} {n=="4.9" && <Star className="w-6 h-6 fill-current shrink-0" />}</div>
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-1">{l}</div>
             </div>
           ))}
@@ -339,8 +339,8 @@ const menuData: MenuSection[] = [
       { name: { en: "Paitan Chicken Wanton", hu: "Paitan Chicken Wanton" }, jp: "鶏白湯ワンタン", desc: { en: "Paitan broth with chicken wantons, egg, corn, shiitake, cherry tomatoes, nori, scallions & aroma oil.", hu: "Paitan alaplé csirke wontonnal, tojással, kukoricával, shiitakével, koktélparadicsommal, norival, újhagymával és aromás olajjal." }, price: "4 990" },
       { name: { en: "Buttercorn Creamy Miso", hu: "Buttercorn Creamy Miso" }, jp: "バターコーン味噌", desc: { en: "Rich Tonkotsu miso broth with pork mince, egg, edamame, corn, scallions, nori & butter.", hu: "Gazdag tonkotsu miso alaplé darált sertéshússal, tojással, edamaméval, kukoricával, újhagymával, norival és vajjal." }, price: "4 490" },
       { name: { en: "Tonkotsu Sesame Miso", hu: "Tonkotsu Sesame Miso" }, jp: "豚骨胡麻味噌", desc: { en: "Rich sesame Tonkotsu miso broth with chashu, egg, kimchi, bamboo, nori, scallions & rayu (chili oil).", hu: "Gazdag szezámos tonkotsu miso alaplé chashuval, tojással, kimchivel, bambusszal, norival, újhagymával és rayuval (csiliolaj)." }, price: "4 490", tag: { en: "Spicy", hu: "Csípős" } },
-      { name: { en: "Sesame Spicy Dan Dan", hu: "Sesame Spicy Dan Dan" }, jp: "黒ごま辛味担々麺", desc: { en: "Soy milk broth with spicy beef, edamame, shiitake, cherry tomatoes, peanuts, black sesame, nori, scallions & rayu.", hu: "Szójatejes alaplé csípős marhahússal, edamaméval, shiitakével, koktélparadicsommal, mogyoróval, fekete szezámmal, norival, újhagymával és rayuval." }, price: "4 490", tag: { en: "Spicy", hu: "Csípős" } },
-      { name: { en: "Yume Red Rāmen / Tossed", hu: "Yume Red Rāmen / Tossed" }, jp: "夢の辛味赤ラーメン / まぜそば", desc: { en: "Shoyu broth with kakuni (braised pork), cabbage, shiitake, bean sprouts, nori, garlic, scallions & rayu.", hu: "Shoyu alaplé kakunival (párolt sertés), káposztával, shiitakével, babcsírával, norival, fokhagymával, újhagymával és rayuval." }, price: "4 490", tag: { en: "Spicy", hu: "Csípős" } },
+      { name: { en: "Sesame Spicy Dan Dan", hu: "Sesame Spicy Dan Dan" }, jp: "黒ごま辛味担々麺", desc: { en: "Soy milk broth with spicy beef, edamame, shiitake, cherry tomatoes, peanuts, black sesame, nori, scallions & rayu.", hu: "Szójatejes alaplé csípős marhahússal, edamaméval, shiitakével, koktélparadicsommal, mogyoróval, fekete szezámmal, norival, újhagymával és rayuval." }, price: "4 490", tag: { en: "Extra Spicy", hu: "Extra Csípős" } },
+      { name: { en: "Yume Red Rāmen / Tossed", hu: "Yume Red Rāmen / Tossed" }, jp: "夢の辛味赤ラーメン / まぜそば", desc: { en: "Shoyu broth with kakuni (braised pork), cabbage, shiitake, bean sprouts, nori, garlic, scallions & rayu.", hu: "Shoyu alaplé kakunival (párolt sertés), káposztával, shiitakével, babcsírával, norival, fokhagymával, újhagymával és rayuval." }, price: "4 490", tag: { en: "Ultra Spicy", hu: "Ultra Csípős" } },
       { name: { en: "Vegetable Soymilk Miso", hu: "Vegetable Soymilk Miso" }, jp: "野菜豆乳味噌", desc: { en: "Soy milk broth with tofu, shiitake, corn, edamame, lotus root, nori, scallions, fried garlic & sesame oil.", hu: "Szójatejes alaplé tofuval, shiitakével, kukoricával, edamaméval, lótuszgyökérrel, norival, újhagymával, sült fokhagymával és szezámolajjal." }, price: "4 990", tag: { en: "Vegan", hu: "Vegán" } },
     ],
   },
@@ -355,11 +355,11 @@ const menuData: MenuSection[] = [
   {
     key: "fried",
     items: [
-      { name: { en: "Gyoza (6 pcs) — Chicken / Vegan", hu: "Gyoza (6 pcs) — Chicken / Vegan" }, jp: "鶏 / 野菜餃子", price: "1 990" },
-      { name: { en: "Tempura Shrimp (6 pcs)", hu: "Tempura Shrimp (6 pcs)" }, jp: "えび天ぷら", price: "1 990" },
-      { name: { en: "Spring Rolls Shrimp (4 pcs)", hu: "Spring Rolls Shrimp (4 pcs)" }, jp: "えびの春巻き", price: "1 990" },
-      { name: { en: "Lobster Wanton Shrimp (4 pcs)", hu: "Lobster Wanton Shrimp (4 pcs)" }, jp: "えびワンタン", price: "1 990" },
-      { name: { en: "Meatball Skewer Pork (4 pcs)", hu: "Meatball Skewer Pork (4 pcs)" }, jp: "豚団子串", price: "1 990" },
+      { name: { en: "Gyoza (6 pcs)", hu: "Gyoza (6 db)" }, jp: "鶏 / 野菜餃子", desc: { en: "Chicken / Vegan", hu: "Csirkés / Vegán" }, price: "1 990" },
+      { name: { en: "Tempura Shrimp (6 pcs)", hu: "Tempura Shrimp (6 db)" }, jp: "えび天ぷら", desc: { en: "", hu: "Tempura Garnéla" }, price: "1 990" },
+      { name: { en: "Spring Rolls Shrimp (4 pcs)", hu: "Spring Rolls Shrimp (4 db)" }, jp: "えびの春巻き", desc: { en: "", hu: "Tavaszi Tekercs Garnélával" }, price: "1 990" },
+      { name: { en: "Lobster Wanton Shrimp (4 pcs)", hu: "Lobster Wanton Shrimp (4 db)" }, jp: "えびワンタン",  desc: { en: "", hu: "Rántott Wonton Garnélával" },price: "1 990" },
+      { name: { en: "Meatball Skewer Pork (4 pcs)", hu: "Meatball Skewer Pork (4 db)" }, jp: "豚団子串", desc: { en: "", hu: "Rántott Sertéshúsgolyó" }, price: "1 990" },
     ],
   },
   {
@@ -367,7 +367,7 @@ const menuData: MenuSection[] = [
     items: [
       { name: { en: "Potato Bacon Salad", hu: "Potato Bacon Salad" }, jp: "ポテトベーコンサラダ", desc: { en: "Potato salad with carrots, gherkins, onion, black olives, bacon & creamy mayonnaise.", hu: "Burgonyasaláta sárgarépával, csemegeuborkával, hagymával, fekete olívával, baconnel és krémes majonézzel." }, price: "1 590" },
       { name: { en: "Kimchi", hu: "Kimchi" }, jp: "キムチ", desc: { en: "Spicy fermented cabbage.", hu: "Csípős erjesztett káposzta." }, price: "1 590" },
-      { name: { en: "Wakame (Seaweed Salad)", hu: "Wakame (Seaweed Salad)" }, jp: "ワカメ", price: "1 290" },
+      { name: { en: "Wakame (Seaweed Salad)", hu: "Wakame" }, jp: "ワカメ", desc: { en: "", hu: "Japán Algasaláta" }, price: "1 290" },
       { name: { en: "Edamame", hu: "Edamame" }, jp: "枝豆", desc: { en: "Soybeans.", hu: "Szójabab." }, price: "1 290" },
     ],
   },
@@ -402,16 +402,16 @@ const menuData: MenuSection[] = [
   {
     key: "cold_drinks",
     items: [
-      { name: { en: "Mineral Water 500ml (Still / Sparkling)", hu: "Ásványvíz 500ml (szénsavmentes / szénsavas)" }, price: "690" },
+      { name: { en: "Mineral Water 500ml", hu: "Ásványvíz 500ml" }, desc: { en: "Still / Sparkling", hu: "Szénsavmentes / Szénsavas" }, price: "690" },
       { name: { en: "Cola", hu: "Cola" }, price: "890" },
       { name: { en: "Cola Zero", hu: "Cola Zero" }, price: "890" },
       { name: { en: "Fanta", hu: "Fanta" }, price: "890" },
       { name: { en: "Ginger Ale", hu: "Gyömbér" }, price: "890" },
       { name: { en: "Cappy", hu: "Cappy" }, price: "890" },
-      { name: { en: "Milkis 250ml (Yogurt / Melon)", hu: "Milkis 250ml (Joghurt / Dinnye)" }, price: "990" },
-      { name: { en: "Rico Bubble Milk Tea (Original / Thai / Brown Sugar / Honeydew)", hu: "Rico buborékos tej tea" }, price: "990" },
-      { name: { en: "Chi Sparkling Water (Peach / Grape / Lychee)", hu: "Chi szénsavas víz (Őszibarack / Szőlő / Licsi)" }, price: "990" },
-      { name: { en: "OKF Sparkling Water (Grapefruit / Pineapple / Lime / Strawberry / Aloe / Grapes)", hu: "OKF szénsavas víz" }, price: "990" },
+      { name: { en: "Milkis 250ml", hu: "Milkis 250ml" }, desc: { en: "Yogurt / Melon", hu: "Joghurt / Dinnye" }, price: "990" },
+      { name: { en: "Rico Bubble Milk Tea ", hu: "Rico Buborékos Tej Tea" }, desc: { en: "Original / Thai / Brown Sugar / Honeydew", hu: "Eredeti / Thai / Barnacukor / Mézdinnye" }, price: "990" },
+      { name: { en: "Chi Sparkling Water", hu: "Chi Szénsavas Víz" }, desc: { en: "Peach / Grape / Lychee", hu: "Őszibarack / Szőlő / Licsi" }, price: "990" },
+      { name: { en: "OKF Sparkling Water", hu: "OKF Szénsavas Víz" }, desc: { en: "Grapefruit / Pineapple / Lime / Strawberry / Aloe / Grapes", hu: "Grapefruit / Ananász / Lime / Eper / Aloe / Szőlő" }, price: "990" },
     ],
   },
   {
@@ -427,7 +427,7 @@ const menuData: MenuSection[] = [
       { name: { en: "Delirium Tremens 8.5%", hu: "Delirium Tremens 8.5%" }, price: "1 990" },
       { name: { en: "Delirium Red 8%", hu: "Delirium Red 8%" }, price: "2 490" },
       { name: { en: "Asahi 5%", hu: "Asahi 5%" }, price: "990" },
-      { name: { en: "Somersby 4.5% (Apple / Blueberry)", hu: "Somersby 4.5% (Alma / Áfonya)" }, price: "990" },
+      { name: { en: "Somersby 4.5%", hu: "Somersby 4.5%" }, desc: { en: "Apple / Blueberry", hu: "Alma / Áfonya" }, price: "990" },
     ],
   },
 ];
