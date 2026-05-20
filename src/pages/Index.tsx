@@ -10,7 +10,7 @@ type Lang = "en" | "hu";
 
 const t = {
   en: {
-    nav: { story: "Story", menu: "Menu", reviews: "Reviews", visit: "Visit", reserve: "Reserve" },
+    nav: { story: "Story", menu: "Menu", reviews: "Reviews", visit: "Visit", reserve: "Find us" },
     hero: {
       kicker: "Budapest · Káldy Gyula u. 5",
       title1: "A bowl",
@@ -78,7 +78,7 @@ const t = {
     closed: "Closed",
   },
   hu: {
-    nav: { story: "Rólunk", menu: "Étlap", reviews: "Vélemények", visit: "Látogass el", reserve: "Foglalás" },
+    nav: { story: "Rólunk", menu: "Étlap", reviews: "Vélemények", visit: "Látogass el", reserve: "Elérhetőség" },
     hero: {
       kicker: "Budapest · Káldy Gyula u. 5",
       title1: "Egy tál, amiért",
