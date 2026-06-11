@@ -147,6 +147,8 @@ const t = {
   },
 } as const;
 
+const reviewsNumber = "79"
+
 const useNow = () => {
   const [now, setNow] = useState(new Date());
   useEffect(() => {
@@ -313,7 +315,7 @@ const Story = ({ lang }: { lang: Lang }) => { const L = t[lang].story; return (
         <div className="mt-12 flex flex-wrap gap-x-12 gap-y-6">
           {([
             ["4.9", L.stat1],
-            ["79", L.stat2],
+            [reviewsNumber, L.stat2],
             [lang === "hu" ? "H–Szo" : "Mon–Sat", "12:00 – 22:00"],
           ] as const).map(([n, l]) => (
             <div key={l}>
@@ -510,7 +512,7 @@ const Reviews = ({ lang }: { lang: Lang }) => { const L = t[lang].reviews; retur
         <p className="text-primary text-xs tracking-[0.4em] uppercase mb-6">{L.kicker}</p>
         <h2 className="font-display text-5xl md:text-6xl leading-[1.05] text-balance">
           <span className="text-primary">4.9</span> {L.title1}<br />
-          <em className="italic text-muted-foreground">58 {L.titleEm}</em>
+          <em className="italic text-muted-foreground"{reviewsNumber} {L.titleEm}</em>
         </h2>
         <div className="mt-6 flex items-center justify-center gap-1.5 text-primary">
           {Array.from({ length: 5 }).map((_, i) => (
