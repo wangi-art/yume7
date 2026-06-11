@@ -313,7 +313,7 @@ const Story = ({ lang }: { lang: Lang }) => { const L = t[lang].story; return (
         <div className="mt-12 flex flex-wrap gap-x-12 gap-y-6">
           {([
             ["4.9", L.stat1],
-            ["56", L.stat2],
+            ["79", L.stat2],
             [lang === "hu" ? "H–Szo" : "Mon–Sat", "12:00 – 22:00"],
           ] as const).map(([n, l]) => (
             <div key={l}>
