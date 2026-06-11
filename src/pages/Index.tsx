@@ -147,7 +147,6 @@ const t = {
   },
 } as const;
 
-const reviewsNumber = "79"
 
 const useNow = () => {
   const [now, setNow] = useState(new Date());
@@ -512,7 +511,7 @@ const Reviews = ({ lang }: { lang: Lang }) => { const L = t[lang].reviews; retur
         <p className="text-primary text-xs tracking-[0.4em] uppercase mb-6">{L.kicker}</p>
         <h2 className="font-display text-5xl md:text-6xl leading-[1.05] text-balance">
           <span className="text-primary">4.9</span> {L.title1}<br />
-          <em className="italic text-muted-foreground"{reviewsNumber} {L.titleEm}</em>
+          <em className="italic text-muted-foreground">79 {L.titleEm}</em>
         </h2>
         <div className="mt-6 flex items-center justify-center gap-1.5 text-primary">
           {Array.from({ length: 5 }).map((_, i) => (
